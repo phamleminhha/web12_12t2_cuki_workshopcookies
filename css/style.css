@@ -70,7 +70,7 @@ header nav > ul a{
     padding: 12px 24px; 
     display: block; 
     color: #EFE2B2; 
-    font-size: 1.2rem; 
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
     text-decoration-line: uppercase; 
 }
 header nav > ul a:hover{
