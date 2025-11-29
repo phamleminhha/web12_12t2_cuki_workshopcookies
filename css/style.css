@@ -34,24 +34,27 @@ html, body{
 /*HEADER*/
 header{
     background-color: #270D0B;
-    display: flex; 
+    display: flex;
+    flex-wrap: wrap; /* cho phép header xuống dòng nếu quá hẹp */
     justify-content: space-between;
+    align-items: center;
     position: fixed; 
     z-index: 999; 
     width: 100%; 
+    padding: 0 10px; /* giảm padding để fit mobile */
 }
-@media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column; /* hoặc dùng menu burger */
-    }
-}
+
 header ul{
     padding-left: 5px; 
     margin: 0; 
+    display: flex;
+    flex-wrap: wrap; /* nav items xuống dòng nếu cần */
 }
+
 header > nav > ul > li {
     list-style: none;
 }
+
 header > nav > ul > li:hover{
     background-color: #BD8C61;
 }
@@ -61,18 +64,16 @@ header > nav > ul > li:hover a{
 header > nav > ul > li:hover i{
     color: #5A2C22; 
 }
-header nav ul{
-    display: flex; 
-    flex-wrap: wrap; 
-}
+
 header nav > ul a{
     text-decoration: none; 
     padding: 12px 24px; 
     display: block; 
     color: #EFE2B2; 
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
-    text-decoration-line: uppercase; 
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem); /* font co theo viewport */
+    text-transform: uppercase; 
 }
+
 header nav > ul a:hover{
     background-color: #BD8C61; 
     color: #5A2C22; 
@@ -83,6 +84,7 @@ header nav > ul a:hover{
     position: relative; 
     align-items: center;
 }
+
 .nav__more .nav__item {
     position: absolute; 
     top: 100%; 
@@ -92,40 +94,47 @@ header nav > ul a:hover{
     opacity: 0; 
     z-index: 1;
 }
+
 .nav__more:hover .nav__item{
     opacity: 1;
-    }
+}
+
 .nav__more > a{
     padding-right: 5px; 
 }
+
 .header__search>i{
     color: #EFE2B2; 
-    font-size: 1.1rem; 
+    font-size: clamp(1rem, 2vw, 1.2rem); /* co theo viewport */
     padding: 14px 24px; 
 }
+
 .header__search>i:hover{
     background-color: #BD8C61;
 }
+
 .nav__more > i{
     color: #EFE2B2; 
     padding-right: 24px; 
 }
+
 .nav__more .nav__item a{
     color:#270D0B; 
     text-transform: capitalize; 
     display: block; 
     padding: 10px 5px; 
 }
+
+/*Media query cho mobile*/
 @media (max-width: 768px) {
-    header nav a {
-        font-size: 0.9rem;
-        padding: 6px 8px;
+    header nav ul {
+        justify-content: center; /* canh giữa nếu nav wrap xuống dòng */
     }
-    .header__search i {
-        font-size: 1rem;
-        padding: 10px 12px;
+    .header__search>i{
+        padding: 10px 12px; 
     }
 }
+
 /*carousel*/
 .carouselTheBand .carousel-item{
     height: auto; 
