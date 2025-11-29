@@ -116,6 +116,16 @@ header nav > ul a:hover{
     display: block; 
     padding: 10px 5px; 
 }
+@media (max-width: 768px) {
+    header nav a {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+    }
+    .header__search i {
+        font-size: 1rem;
+        padding: 10px 12px;
+    }
+}
 /*carousel*/
 .carouselTheBand .carousel-item{
     height: auto; 
